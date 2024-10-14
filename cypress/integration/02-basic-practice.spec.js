@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /// <reference types="cypress" />
 
 describe('Basic Practice', () => {
@@ -6,11 +7,21 @@ describe('Basic Practice', () => {
   });
 
   describe('Adding a new item', () => {
-    it('should put a new item on the page after clicking on "Add Item"', () => {});
+    it.only('should put a new item on the page after clicking on "Add Item"', () => {
+      cy.get('[data-test="new-item-input"]').should('exist').type('this is new item');
+      cy.get('[data-test="add-item"]').should('exist').click();
+      cy.contains('this is new item');
+    });
 
-    it('should put a new item in the "Unpacked Items" list', () => {});
+    it('should put a new item in the "Unpacked Items" list', () => {
+      cy.get('[data-test="new-item-input"]').should('exist').type('this is new item');
+      cy.get('[data-test="add-item"]').should('exist').click();
+    });
 
-    it('should put a new item as the last item in the "Unpacked Items" list', () => {});
+    it('should put a new item as the last item in the "Unpacked Items" list', () => {
+      cy.get('ul.s-vF8tIk32PFgu > :nth-child(5)');
+      cy.get('data');
+    });
   });
 
   describe('Filtering items', () => {
