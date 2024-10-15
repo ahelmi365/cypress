@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+/* eslint-disable */
 describe('Basic Practice', () => {
   beforeEach(() => {
     cy.visit('/jetsetter');
