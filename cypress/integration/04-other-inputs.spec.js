@@ -13,7 +13,7 @@ describe('Secret Menu Items', () => {
   });
 
   // range input
-  it.only('should set the range and verify it', () => {
+  it('should set the range and verify it', () => {
     cy.get('@rating-filter').should('exist');
     cy.get('@rating-filter').invoke('val', '7').trigger('input');
     cy.get('@rating-filter').should('have.value', '7');
